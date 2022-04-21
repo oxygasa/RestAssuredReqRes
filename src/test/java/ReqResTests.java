@@ -55,13 +55,13 @@ public class ReqResTests {
     }
 
     @Test
-    public void userPojoTest2(){ //short variation
+    public void userPojoTest2() { //short variation
         List<Users1Pojo> users = UserSteps.getUsers();
         assertThat(users).extracting(Users1Pojo::getEmail).contains("george.bluth@reqres.in");
     }
 
     @Test
-    public void createUser(){
+    public void createUser() { //long variation
         CreateUserReqPojo reqPojo = new CreateUserReqPojo();
         reqPojo.setName("Dimitri");
         reqPojo.setJob("QA-Automation");
