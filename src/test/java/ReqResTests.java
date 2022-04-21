@@ -42,7 +42,7 @@ public class ReqResTests {
 
 
     @Test
-    public void userPojoTest() {
+    public void userPojoTest1() { //long variation
         List<Users1Pojo> users = //main > java > pojoes > UserPojo.
                 given()
                         .spec(UserSteps.REQ_SPEC)
@@ -53,6 +53,13 @@ public class ReqResTests {
         assertThat(users).extracting(Users1Pojo::getEmail).contains("george.bluth@reqres.in"); //assertJ-core dependency.
 
     }
+
+    @Test
+    public void userPojoTest2(){ //short variation
+        List<Users1Pojo> users = UserSteps.getUsers();
+        assertThat(users).extracting(Users1Pojo::getEmail).contains("george.bluth@reqres.in");
+    }
+
     @Test
     public void createUser(){
         CreateUserReqPojo reqPojo = new CreateUserReqPojo();
